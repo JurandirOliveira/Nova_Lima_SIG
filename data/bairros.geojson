@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+  {
+  "type": "Feature",
+  "properties": {
+    "nome": "Jardim de Petrópolis",
+    "area": "3,6 km²",
+    "tipo": "Bairro"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [-43.895, -19.995],
+        [-43.872, -19.995],
+        [-43.872, -20.014],
+        [-43.895, -20.014],
+        [-43.895, -19.995]
+      ]
+    ]
+  }
+},
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Centro",
+        "area": "2,4 km²",
+        "tipo": "Bairro"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-43.857, -19.980],
+            [-43.846, -19.980],
+            [-43.846, -19.990],
+            [-43.857, -19.990],
+            [-43.857, -19.980]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Jardim Canadá",
+        "area": "4,8 km²",
+        "tipo": "Bairro"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-43.970, -20.030],
+            [-43.945, -20.030],
+            [-43.945, -20.050],
+            [-43.970, -20.050],
+            [-43.970, -20.030]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Honório Bicalho",
+        "area": "3,1 km²",
+        "tipo": "Bairro"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-43.840, -20.000],
+            [-43.820, -20.000],
+            [-43.820, -20.020],
+            [-43.840, -20.020],
+            [-43.840, -20.000]
+          ]
+        ]
+      }
+    }
+  ]
+}

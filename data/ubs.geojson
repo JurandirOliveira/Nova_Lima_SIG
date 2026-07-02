@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "UBS Centro",
+        "tipo": "Unidade Básica de Saúde",
+        "bairro": "Centro",
+        "endereco": "Rua São João, 120",
+        "telefone": "(31) 3541-0001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.852, -19.985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "UBS Jardim Canadá",
+        "tipo": "Unidade Básica de Saúde",
+        "bairro": "Jardim Canadá",
+        "endereco": "Av. Montreal, 200",
+        "telefone": "(31) 3541-0002"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.957, -20.041]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "UBS Honório Bicalho",
+        "tipo": "Unidade Básica de Saúde",
+        "bairro": "Honório Bicalho",
+        "endereco": "Rua Mestre Caetano, 85",
+        "telefone": "(31) 3541-0003"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.830, -20.011]
+      }
+    }
+  ]
+}

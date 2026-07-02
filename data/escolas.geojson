@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Escola Municipal Centro",
+        "tipo": "Municipal",
+        "bairro": "Centro",
+        "endereco": "Rua Principal, 100"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.851, -19.984]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Escola Estadual Centro",
+        "tipo": "Estadual",
+        "bairro": "Centro",
+        "endereco": "Av. Central, 250"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.854, -19.987]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Escola Municipal Jardim Canadá",
+        "tipo": "Municipal",
+        "bairro": "Jardim Canadá",
+        "endereco": "Rua Canadá, 80"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.958, -20.039]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Escola Infantil Jardim Canadá",
+        "tipo": "Infantil",
+        "bairro": "Jardim Canadá",
+        "endereco": "Av. Toronto, 45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.951, -20.046]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Escola Municipal Honório Bicalho",
+        "tipo": "Municipal",
+        "bairro": "Honório Bicalho",
+        "endereco": "Rua Honório, 120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8330, -20.010]
+      }
+    }
+  ]
+}

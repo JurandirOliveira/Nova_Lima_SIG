@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Coleta - Centro",
+        "tipo": "Coleta seletiva",
+        "bairro": "Centro",
+        "endereco": "Praça Central, s/n",
+        "materiais": "Papel, plástico, metal e vidro",
+        "horario": "Segunda a sexta, 08h às 17h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8515, -19.988]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Coleta - Jardim Canadá",
+        "tipo": "Coleta seletiva",
+        "bairro": "Jardim Canadá",
+        "endereco": "Avenida Montreal, s/n",
+        "materiais": "Papel, plástico, metal e vidro",
+        "horario": "Segunda a sábado, 08h às 18h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.953, -20.0402]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Coleta- Honório Bicalho",
+        "tipo": "Coleta seletiva",
+        "bairro": "Honório Bicalho",
+        "endereco": "Rua da Estação, s/n",
+        "materiais": "Papel, plástico, metal e vidro",
+        "horario": "Terça a sábado, 08h às 16h"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8350, -20.0125]
+      }
+    }
+  ]
+}

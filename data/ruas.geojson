@@ -1,0 +1,267 @@
+{
+  "type": "FeatureCollection",
+  "name": "ruas",
+  "features": [
+  
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua Principal",
+        "tipo": "Rua",
+        "bairro": "Centro",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "820 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8565, -19.9840],
+          [-43.8540, -19.9840],
+          [-43.8510, -19.9840],
+          [-43.8465, -19.9840]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Avenida Central",
+        "tipo": "Avenida",
+        "bairro": "Centro",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "760 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8520, -19.9805],
+          [-43.8520, -19.9830],
+          [-43.8520, -19.9860],
+          [-43.8520, -19.9895]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua São João",
+        "tipo": "Rua",
+        "bairro": "Centro",
+        "sentido": "Único",
+        "pavimentacao": "Asfalto",
+        "extensao": "690 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8560, -19.9885],
+          [-43.8535, -19.9870],
+          [-43.8505, -19.9855],
+          [-43.8470, -19.9825]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Avenida Montreal",
+        "tipo": "Avenida",
+        "bairro": "Jardim Canadá",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "1,6 km"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9690, -20.0360],
+          [-43.9630, -20.0360],
+          [-43.9550, -20.0360],
+          [-43.9460, -20.0360]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua Canadá",
+        "tipo": "Rua",
+        "bairro": "Jardim Canadá",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "1,2 km"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9570, -20.0305],
+          [-43.9570, -20.0350],
+          [-43.9570, -20.0420],
+          [-43.9570, -20.0495]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua das Acácias",
+        "tipo": "Rua",
+        "bairro": "Jardim Canadá",
+        "sentido": "Único",
+        "pavimentacao": "Bloquete",
+        "extensao": "980 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9680, -20.0485],
+          [-43.9630, -20.0450],
+          [-43.9560, -20.0400],
+          [-43.9480, -20.0320]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua Mestre Caetano",
+        "tipo": "Rua",
+        "bairro": "Honório Bicalho",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "930 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8395, -20.0060],
+          [-43.8350, -20.0060],
+          [-43.8290, -20.0060],
+          [-43.8205, -20.0060]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Avenida Ferroviária",
+        "tipo": "Avenida",
+        "bairro": "Honório Bicalho",
+        "sentido": "Duplo",
+        "pavimentacao": "Asfalto",
+        "extensao": "1,1 km"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8330, -20.0005],
+          [-43.8330, -20.0050],
+          [-43.8330, -20.0120],
+          [-43.8330, -20.0195]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Rua da Estação",
+        "tipo": "Rua",
+        "bairro": "Honório Bicalho",
+        "sentido": "Único",
+        "pavimentacao": "Paralelepípedo",
+        "extensao": "740 m"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.8390, -20.0185],
+          [-43.8350, -20.0150],
+          [-43.8290, -20.0100],
+          [-43.8210, -20.0020]
+        ]
+      }
+    },
+    {
+  "type": "Feature",
+  "properties": {
+    "nome": "Alameda Petrópolis",
+    "tipo": "Alameda",
+    "bairro": "Jardim de Petrópolis",
+    "sentido": "Duplo",
+    "pavimentacao": "Asfalto",
+    "extensao": "1,2 km"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-43.893, -20.000],
+      [-43.887, -20.000],
+      [-43.880, -20.000],
+      [-43.873, -20.000]
+    ]
+  }
+},
+{
+  "type": "Feature",
+  "properties": {
+    "nome": "Rua das Araucárias",
+    "tipo": "Rua",
+    "bairro": "Jardim de Petrópolis",
+    "sentido": "Duplo",
+    "pavimentacao": "Asfalto",
+    "extensao": "950 m"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-43.887, -19.996],
+      [-43.887, -20.002],
+      [-43.887, -20.008],
+      [-43.887, -20.013]
+    ]
+  }
+},
+{
+  "type": "Feature",
+  "properties": {
+    "nome": "Rua dos Ipês",
+    "tipo": "Rua",
+    "bairro": "Jardim de Petrópolis",
+    "sentido": "Único",
+    "pavimentacao": "Bloquete",
+    "extensao": "830 m"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-43.894, -20.012],
+      [-43.889, -20.008],
+      [-43.883, -20.004],
+      [-43.874, -19.997]
+    ]
+  }
+},
+{
+  "type": "Feature",
+  "properties": {
+    "nome": "Rua Mirante da Serra",
+    "tipo": "Rua",
+    "bairro": "Jardim de Petrópolis",
+    "sentido": "Duplo",
+    "pavimentacao": "Asfalto",
+    "extensao": "760 m"
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-43.874, -20.012],
+      [-43.880, -20.008],
+      [-43.886, -20.004],
+      [-43.894, -19.998]
+    ]
+  }
+}
+  ]
+}
