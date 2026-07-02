@@ -276,8 +276,8 @@ function renderizarPainelBairro(config) {
 
               return criarServicoNoBairro(
                 "escola",
-                escolasDoBairro.length > 1 ? `Escolas (${escolasDoBairro.length})` : "Escola",
-                escola.nome,
+                "",
+                graphic,
                 escola.endereco
               );
             }).join("")
@@ -291,8 +291,8 @@ function renderizarPainelBairro(config) {
 
               return criarServicoNoBairro(
                 "ubs",
-                ubsDoBairro.length > 1 ? `UBS (${ubsDoBairro.length})` : "UBS",
-                ubs.nome,
+                "",
+                graphic,
                 ubs.endereco
               );
             }).join("")
@@ -306,8 +306,8 @@ function renderizarPainelBairro(config) {
 
               return criarServicoNoBairro(
                 "coleta",
-                coletasDoBairro.length > 1 ? `Pontos de Coleta (${coletasDoBairro.length})` : "Ponto de Coleta",
-                coleta.nome,
+                "",
+                graphic,
                 coleta.endereco
               );
             }).join("")
