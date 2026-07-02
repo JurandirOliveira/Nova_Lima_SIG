@@ -126,7 +126,7 @@ function renderizarPainelEscola(attr) {
     titulo: attr.nome,
     campos: [
       criarCampoRecurso("Tipo", attr.tipo, false),
-      criarCampoRecurso("Qtd. Alunos", attr.qtd_alunos || "Não informado", false),
+      criarCampoRecurso("Qtd. de Alunos", attr.qtd_alunos || "Não informado", false),
       criarCampoRecurso("Diretor(a)", attr.diretor || "Não informado", true),
       criarCampoRecurso("Endere&ccedil;o", attr.endereco, true),
       criarCampoRecurso("Munic&iacute;pio", "Nova Lima - MG", true)
