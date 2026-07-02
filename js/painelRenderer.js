@@ -26,28 +26,11 @@ function criarBotaoMostrarMapa() {
   `;
 }
 
-function criarServicoNoBairro(classe, titulo, graphic, detalhe) {
-
-  const nome = graphic.attributes.nome;
-
-  return `
-    <div
-      class="service-card service-card-clickable"
-      data-recurso="${classe}"
-      data-objectid="${graphic.attributes.OBJECTID || ""}"
-    >
-
-      ${criarIconeServico(classe)}
-
-      <div class="service-content">
-        <div class="service-label">${titulo}</div>
-        <div class="service-name">${nome}</div>
-        <div class="service-detail">${detalhe}</div>
-      </div>
-
-    </div>
-  `;
-}
+<div
+  class="service-card service-card-bairro"
+  data-recurso="${classe}"
+  data-nome="${graphic.attributes.nome}"
+>
 
 function criarServicoMaisProximo(classe, titulo, graphic, distanciaMetros) {
   return `
