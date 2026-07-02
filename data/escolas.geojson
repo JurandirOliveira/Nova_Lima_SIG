@@ -9,7 +9,7 @@
         "bairro": "Centro",
         "endereco": "Rua Principal, 100",
         "diretor":"Maria da Silva",
-        "qdt_alunos": "1500",
+        "qtd_alunos": "1500",
         "telefone": "(31)35411234"
       },
       "geometry": {
@@ -25,7 +25,7 @@
         "bairro": "Centro",
         "endereco": "Av. Central, 250",
         "diretor":"João da Silva",
-        "qdt_alunos": "1200",
+        "qtd_alunos": "1200",
         "telefone": "(31)35411234"
       },
       "geometry": {
@@ -41,7 +41,7 @@
         "bairro": "Jardim Canadá",
         "endereco": "Rua Canadá, 80",
         "diretor":"Carolina Souza",
-        "qdt_alunos": "2300",
+        "qtd_alunos": "2300",
         "telefone": "(31)35411234"
       },
       "geometry": {
@@ -57,7 +57,7 @@
         "bairro": "Jardim Canadá",
         "endereco": "Av. Toronto, 45",
         "diretor":"Raquel Gonçalves",
-        "qdt_alunos": "1700",
+        "qtd_alunos": "1700",
         "telefone": "(31)35411234"
       },
       "geometry": {
@@ -73,7 +73,7 @@
         "bairro": "Honório Bicalho",
         "endereco": "Rua Honório, 120",
         "diretor":"Maria das Graças Silva",
-        "qdt_alunos": "2300",
+        "qtd_alunos": "2300",
         "telefone": "(31)35411234"
       },
       "geometry": {
