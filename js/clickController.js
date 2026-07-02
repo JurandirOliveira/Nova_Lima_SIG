@@ -179,89 +179,12 @@ return;
       })
     );
     
-    function registrarEventosPainel(
-  bairroGeometry,
-  escolaMaisProxima,
-  ubsMaisProxima,
-  coletaMaisProxima
-) {
-  document.querySelectorAll(".service-card-clickable").forEach(function (card) {
-    card.addEventListener("click", function () {
-      document
-        .querySelectorAll(".service-card-clickable, .service-card-bairro")
-        .forEach(function (c) {
-          c.classList.remove("active");
-        });
-
-      card.classList.add("active");
-
-      const tipo = card.dataset.recurso;
-
-      if (tipo === "escola" && escolaMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, escolaMaisProxima.graphic);
-      }
-
-      if (tipo === "ubs" && ubsMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, ubsMaisProxima.graphic);
-      }
-
-      if (tipo === "coleta" && coletaMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, coletaMaisProxima.graphic);
-      }
-    });
-  });
-
-  document.querySelectorAll(".service-card-bairro").forEach(function (card) {
-    card.addEventListener("click", function () {
-      document
-        .querySelectorAll(".service-card-clickable, .service-card-bairro")
-        .forEach(function (c) {
-          c.classList.remove("active");
-        });
-
-      card.classList.add("active");
-
-      const tipo = card.dataset.recurso;
-      const nome = card.dataset.nome;
-
-      let camada = null;
-      let simboloSelecionado = null;
-
-      if (tipo === "escola") {
-        camada = window.escolasLayer;
-        simboloSelecionado = window.CAMADAS.escolas.selectedSymbol;
-      }
-
-      if (tipo === "ubs") {
-        camada = window.ubsLayer;
-        simboloSelecionado = window.CAMADAS.ubs.selectedSymbol;
-      }
-
-      if (tipo === "coleta") {
-        camada = window.coletaLayer;
-        simboloSelecionado = window.CAMADAS.coleta.selectedSymbol;
-      }
-
-      if (!camada) {
-        return;
-      }
-
-      const graphic = camada.graphics.items.find(function (item) {
-        return item.attributes.nome === nome;
-      });
-
-      if (!graphic) {
-        return;
-      }
-
-      selecionarFeature({
-        graphic: graphic,
-        selectedSymbol: simboloSelecionado,
-        zoom: 16
-      });
-    });
-  });
-}
+    registrarEventosPainel(
+      bairroGeometry,
+      escolaMaisProxima,
+      ubsMaisProxima,
+      coletaMaisProxima
+    );
 
     return;
   }
@@ -291,29 +214,68 @@ function registrarEventosPainel(
   ubsMaisProxima,
   coletaMaisProxima
 ) {
-  document.querySelectorAll(".service-card-clickable").forEach(function (card) {
-    card.addEventListener("click", function () {
-    document
-      .querySelectorAll(".service-card-clickable")
-      .forEach(function (c) {
-        c.classList.remove("active");
+  document
+    .querySelectorAll(".service-card-clickable, .service-card-bairro")
+    .forEach(function (card) {
+      card.addEventListener("click", function () {
+        document
+          .querySelectorAll(".service-card-clickable, .service-card-bairro")
+          .forEach(function (c) {
+            c.classList.remove("active");
+          });
+
+        card.classList.add("active");
+
+        const tipo = card.dataset.recurso;
+
+        if (card.classList.contains("service-card-clickable")) {
+          if (tipo === "escola" && escolaMaisProxima) {
+            mostrarConexaoComRecurso(bairroGeometry, escolaMaisProxima.graphic);
+          }
+
+          if (tipo === "ubs" && ubsMaisProxima) {
+            mostrarConexaoComRecurso(bairroGeometry, ubsMaisProxima.graphic);
+          }
+
+          if (tipo === "coleta" && coletaMaisProxima) {
+            mostrarConexaoComRecurso(bairroGeometry, coletaMaisProxima.graphic);
+          }
+
+          return;
+        }
+
+        const nome = card.dataset.nome;
+        let camada = null;
+        let selectedSymbol = null;
+
+        if (tipo === "escola") {
+          camada = window.escolasLayer;
+          selectedSymbol = window.CAMADAS.escolas.selectedSymbol;
+        }
+
+        if (tipo === "ubs") {
+          camada = window.ubsLayer;
+          selectedSymbol = window.CAMADAS.ubs.selectedSymbol;
+        }
+
+        if (tipo === "coleta") {
+          camada = window.coletaLayer;
+          selectedSymbol = window.CAMADAS.coleta.selectedSymbol;
+        }
+
+        if (!camada) return;
+
+        const graphic = camada.graphics.items.find(function (item) {
+          return item.attributes.nome === nome;
+        });
+
+        if (!graphic) return;
+
+        selecionarFeature({
+          graphic: graphic,
+          selectedSymbol: selectedSymbol,
+          zoom: 16
+        });
       });
-    
-    card.classList.add("active");
-
-      const tipo = card.dataset.recurso;
-
-      if (tipo === "escola" && escolaMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, escolaMaisProxima.graphic);
-      }
-
-      if (tipo === "ubs" && ubsMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, ubsMaisProxima.graphic);
-      }
-
-      if (tipo === "coleta" && coletaMaisProxima) {
-        mostrarConexaoComRecurso(bairroGeometry, coletaMaisProxima.graphic);
-      }
     });
-  });
 }

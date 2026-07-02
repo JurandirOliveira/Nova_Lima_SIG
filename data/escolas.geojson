@@ -5,9 +5,12 @@
       "type": "Feature",
       "properties": {
         "nome": "Escola Municipal Centro",
-        "tipo": "Municipal",
+        "tipo": "Municipal central",
         "bairro": "Centro",
-        "endereco": "Rua Principal, 100"
+        "endereco": "Rua Principal, 100",
+        "diretor":"Maria da Silva",
+        "qdt_alunos": "1500",
+        "telefone": "(31)35411234"
       },
       "geometry": {
         "type": "Point",
@@ -20,7 +23,10 @@
         "nome": "Escola Estadual Centro",
         "tipo": "Estadual",
         "bairro": "Centro",
-        "endereco": "Av. Central, 250"
+        "endereco": "Av. Central, 250",
+        "diretor":"João da Silva",
+        "qdt_alunos": "1200",
+        "telefone": "(31)35411234"
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +39,10 @@
         "nome": "Escola Municipal Jardim Canadá",
         "tipo": "Municipal",
         "bairro": "Jardim Canadá",
-        "endereco": "Rua Canadá, 80"
+        "endereco": "Rua Canadá, 80",
+        "diretor":"Carolina Souza",
+        "qdt_alunos": "2300",
+        "telefone": "(31)35411234"
       },
       "geometry": {
         "type": "Point",
@@ -46,7 +55,10 @@
         "nome": "Escola Infantil Jardim Canadá",
         "tipo": "Infantil",
         "bairro": "Jardim Canadá",
-        "endereco": "Av. Toronto, 45"
+        "endereco": "Av. Toronto, 45",
+        "diretor":"Raquel Gonçalves",
+        "qdt_alunos": "1700",
+        "telefone": "(31)35411234"
       },
       "geometry": {
         "type": "Point",
@@ -59,7 +71,10 @@
         "nome": "Escola Municipal Honório Bicalho",
         "tipo": "Municipal",
         "bairro": "Honório Bicalho",
-        "endereco": "Rua Honório, 120"
+        "endereco": "Rua Honório, 120",
+        "diretor":"Maria das Graças Silva",
+        "qdt_alunos": "2300",
+        "telefone": "(31)35411234"
       },
       "geometry": {
         "type": "Point",

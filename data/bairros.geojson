@@ -5,6 +5,7 @@
   "type": "Feature",
   "properties": {
     "nome": "Jardim de Petrópolis",
+    "regional":"Região Noroeste",
     "area": "3,6 km²",
     "tipo": "Bairro"
   },
@@ -25,6 +26,7 @@
       "type": "Feature",
       "properties": {
         "nome": "Centro",
+        "regional":"SEDE",
         "area": "2,4 km²",
         "tipo": "Bairro"
       },
@@ -45,6 +47,7 @@
       "type": "Feature",
       "properties": {
         "nome": "Jardim Canadá",
+        "regional":"Região Noroeste",
         "area": "4,8 km²",
         "tipo": "Bairro"
       },
@@ -65,6 +68,7 @@
       "type": "Feature",
       "properties": {
         "nome": "Honório Bicalho",
+        "regional":"Região Nordeste",
         "area": "3,1 km²",
         "tipo": "Bairro"
       },

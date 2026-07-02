@@ -25,23 +25,46 @@ function criarBotaoMostrarMapa() {
     </button>
   `;
 }
+function criarServicoNoBairro(classe, titulo, graphic, detalhe) {
+  const nome = graphic.attributes.nome;
 
-<div
-  class="service-card service-card-bairro"
-  data-recurso="${classe}"
-  data-nome="${graphic.attributes.nome}"
->
+  return `
+    <div
+      class="service-card service-card-bairro"
+      data-recurso="${classe}"
+      data-nome="${graphic.attributes.nome}"
+    >
+      ${criarIconeServico(classe)}
+
+      <div class="service-content">
+        ${
+          titulo
+            ? `<div class="service-label">${titulo}</div>`
+            : ""
+        }
+
+        <div class="service-name">${nome}</div>
+        <div class="service-detail">${detalhe}</div>
+      </div>
+    </div>
+  `;
+}
 
 function criarServicoMaisProximo(classe, titulo, graphic, distanciaMetros) {
   return `
     <div
       class="service-card service-card-clickable"
-      data-recurso="${classe}">
-
+      data-recurso="${classe}"
+    >
       ${criarIconeServico(classe)}
 
       <div class="service-content">
-        <div class="service-label">${titulo}</div>
+        ${
+          titulo
+            ? `<div class="service-label">${titulo}</div>`
+            : ""
+        }
+
         <div class="service-name">${graphic.attributes.nome}</div>
         <div class="service-detail">${formatarDistancia(distanciaMetros)} m</div>
       </div>
@@ -50,7 +73,6 @@ function criarServicoMaisProximo(classe, titulo, graphic, distanciaMetros) {
     </div>
   `;
 }
-
 function criarIconePrincipal(classe) {
   const caminhos = {
     escola: "./img/icons/escola.png",
@@ -104,7 +126,8 @@ function renderizarPainelEscola(attr) {
     titulo: attr.nome,
     campos: [
       criarCampoRecurso("Tipo", attr.tipo, false),
-      criarCampoRecurso("Bairro", attr.bairro, false),
+      criarCampoRecurso("Qtd. Alunos", attr.qtd_alunos || "Não informado", false),
+      criarCampoRecurso("Diretor(a)", attr.diretor || "Não informado", true),
       criarCampoRecurso("Endere&ccedil;o", attr.endereco, true),
       criarCampoRecurso("Munic&iacute;pio", "Nova Lima - MG", true)
     ]
@@ -207,8 +230,8 @@ function renderizarPainelBairro(config) {
 
       <div class="bairro-grid">
         <div class="bairro-grid-item col-3">
-          <div class="bairro-grid-label">Munic&iacute;pio</div>
-          <div class="bairro-grid-value small">NOVA LIMA - MG</div>
+          <div class="bairro-grid-label">Setor Administrativo </div>
+          <div class="bairro-grid-value small">${bairro.regional}</div>
         </div>
 
         <div class="bairro-grid-item col-3">
