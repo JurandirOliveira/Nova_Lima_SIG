@@ -6,6 +6,7 @@
 function limparSelecao() {
     if (window.analysisLayer) {
     window.analysisLayer.removeAll();
+    window.highlightLayer.removeAll();
   }
   
   
@@ -48,20 +49,24 @@ function limparSelecao() {
       window.selectedGraphic.symbol = window.CAMADAS.ruas.symbol;
     }
   }
-
   window.selectedGraphic = null;
 }
 
 function selecionarFeature(config) {
   limparSelecao();
 
-  window.selectedGraphic = config.graphic;
-  window.selectedGraphic.symbol = config.selectedSymbol;
+window.selectedGraphic = config.graphic;
 
-  window.view.goTo({
-    target: window.selectedGraphic.geometry,
-    zoom: config.zoom || window.view.zoom
-  });
+const destaqueGraphic = config.graphic.clone();
+destaqueGraphic.symbol = config.selectedSymbol;
+
+window.highlightLayer.removeAll();
+window.highlightLayer.add(destaqueGraphic);
+
+window.view.goTo({
+  target: window.selectedGraphic.geometry,
+  zoom: config.zoom || window.view.zoom
+});
 }
 
 async function carregarGeoJSONComoGraphics(config) {
@@ -115,38 +120,35 @@ async function carregarGeoJSONComoGraphics(config) {
 
 function mostrarConexaoComRecurso(origemGeometry, destinoGraphic) {
   window.analysisLayer.removeAll();
-  
-    if (window.analysisGraphic) {
+  window.highlightLayer.removeAll();
 
-    if (window.analysisGraphic.layer === window.escolasLayer) {
-      window.analysisGraphic.symbol = window.CAMADAS.escolas.symbol;
-    }
+  let selectedSymbol = null;
 
-    if (window.analysisGraphic.layer === window.ubsLayer) {
-      window.analysisGraphic.symbol = window.CAMADAS.ubs.symbol;
-    }
-
-    if (window.analysisGraphic.layer === window.coletaLayer) {
-      window.analysisGraphic.symbol = window.CAMADAS.coleta.symbol;
-    }
-
-    window.analysisGraphic = null;
-  }
-  
-  
   if (destinoGraphic.layer === window.escolasLayer) {
-    destinoGraphic.symbol = window.CAMADAS.escolas.selectedSymbol;
+    selectedSymbol = window.CAMADAS.escolas.selectedSymbol;
   }
 
   if (destinoGraphic.layer === window.ubsLayer) {
-    destinoGraphic.symbol = window.CAMADAS.ubs.selectedSymbol;
+    selectedSymbol = window.CAMADAS.ubs.selectedSymbol;
   }
 
   if (destinoGraphic.layer === window.coletaLayer) {
-    destinoGraphic.symbol = window.CAMADAS.coleta.selectedSymbol;
+    selectedSymbol = window.CAMADAS.coleta.selectedSymbol;
   }
 
-  window.analysisGraphic = destinoGraphic;
+  if (destinoGraphic.layer === window.crechesLayer) {
+    selectedSymbol = window.CAMADAS.creches.selectedSymbol;
+  }
+
+  if (selectedSymbol) {
+    const destaqueGraphic = new window.Graphic({
+      geometry: destinoGraphic.geometry,
+      attributes: destinoGraphic.attributes,
+      symbol: selectedSymbol
+    });
+
+    window.highlightLayer.add(destaqueGraphic);
+  }
 
   const pontoOrigem = origemGeometry.centroid || origemGeometry;
   const pontoDestino = destinoGraphic.geometry.centroid || destinoGraphic.geometry;

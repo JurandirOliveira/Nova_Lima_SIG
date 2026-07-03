@@ -86,6 +86,11 @@ const escolasLayer = CAMADAS.escolas.layer;
 const ubsLayer = CAMADAS.ubs.layer;
 const ruasLayer = CAMADAS.ruas.layer;
 const coletaLayer = CAMADAS.coleta.layer;
+const crechesLayer = CAMADAS.creches.layer;
+
+const highlightLayer = new GraphicsLayer({
+  title: "Destaque temporário"
+});
 const analysisLayer = new GraphicsLayer({
   title: "Análises temporárias"
 });
@@ -98,6 +103,8 @@ window.escolasLayer = escolasLayer;
 window.ubsLayer = ubsLayer;
 window.ruasLayer = ruasLayer;
 window.coletaLayer = coletaLayer;
+window.crechesLayer = crechesLayer;
+window.highlightLayer = highlightLayer;
 window.analysisLayer = analysisLayer;
 window.geometryEngine = geometryEngine;
 
@@ -109,7 +116,9 @@ map.add(CAMADAS.ruas.layer);
 map.add(CAMADAS.escolas.layer);
 map.add(CAMADAS.ubs.layer);
 map.add(CAMADAS.coleta.layer);
+map.add(CAMADAS.creches.layer);
 map.add(analysisLayer);
+map.add(highlightLayer);
 
   /* ==========================================
   WIDGETS
@@ -165,7 +174,8 @@ const configuracoesCamadas = [
   CAMADAS.ruas,
   CAMADAS.escolas,
   CAMADAS.ubs,
-  CAMADAS.coleta
+  CAMADAS.coleta,
+  CAMADAS.creches
 ];
 
   async function carregarCamadasLocais() {

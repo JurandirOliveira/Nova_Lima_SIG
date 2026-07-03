@@ -8,7 +8,8 @@ function criarIconeServico(classe) {
   const caminhos = {
     escola: "./img/icons/escola.png",
     ubs: "./img/icons/ubs.png",
-    coleta: "./img/icons/coleta.png"
+    coleta: "./img/icons/coleta.png",
+    creche: "./img/icons/creche.png"
   };
 
   return `
@@ -78,6 +79,7 @@ function criarIconePrincipal(classe) {
     escola: "./img/icons/escola.png",
     ubs: "./img/icons/ubs.png",
     coleta: "./img/icons/coleta.png",
+    creche: "./img/icons/creche.png",
     municipio: "./img/icons/municipio.png"
   };
 
@@ -130,6 +132,19 @@ function renderizarPainelEscola(attr) {
       criarCampoRecurso("Diretor(a)", attr.diretor || "Não informado", true),
       criarCampoRecurso("Endere&ccedil;o", attr.endereco, true),
       criarCampoRecurso("Munic&iacute;pio", "Nova Lima - MG", true)
+    ]
+  });
+}
+
+function renderizarPainelCreche(attr) {
+  return criarPainelRecurso({
+    classe: "creche",
+    titulo: attr.nome,
+    campos: [
+      criarCampoRecurso("Tipo", attr.tipo, false),
+      criarCampoRecurso("Bairro", attr.bairro, false),
+      criarCampoRecurso("Endere&ccedil;o", attr.endereco, true),
+      criarCampoRecurso("Munic&iacute;pio", attr.municipio || "Nova Lima - MG", true)
     ]
   });
 }
@@ -200,21 +215,25 @@ function renderizarPainelBairro(config) {
     escolasDoBairro,
     ubsDoBairro,
     coletasDoBairro,
+    crechesDoBairro,
     ruasDoBairro,
     extensaoTotalFormatada,
     escolaMaisProxima,
     ubsMaisProxima,
+    crecheMaisProxima,
     coletaMaisProxima
   } = config;
 
   const existemServicosNoBairro =
     escolasDoBairro.length > 0 ||
     ubsDoBairro.length > 0 ||
-    coletasDoBairro.length > 0;
+    coletasDoBairro.length > 0 ||
+    crechesDoBairro.length > 0;
 
   const existemServicosMaisProximos =
     escolaMaisProxima ||
     ubsMaisProxima ||
+    crecheMaisProxima ||
     coletaMaisProxima;
 
   return `
@@ -229,12 +248,12 @@ function renderizarPainelBairro(config) {
       </div>
 
       <div class="bairro-grid">
-        <div class="bairro-grid-item col-3">
+        <div class="bairro-grid-item col-4">
           <div class="bairro-grid-label">Setor Administrativo </div>
           <div class="bairro-grid-value small">${bairro.regional}</div>
         </div>
 
-        <div class="bairro-grid-item col-3">
+        <div class="bairro-grid-item col-4">
           <div class="bairro-grid-label">&Aacute;rea aproximada</div>
           <div class="bairro-grid-value small">${bairro.area}</div>
         </div>
@@ -248,6 +267,11 @@ function renderizarPainelBairro(config) {
           <div class="bairro-grid-label">UBS</div>
           <div class="bairro-grid-value">${ubsDoBairro.length}</div>
         </div>
+        
+       <div class="bairro-grid-item col-2">
+          <div class="bairro-grid-label">Cheches</div>
+          <div class="bairro-grid-value">${crechesDoBairro.length}</div>
+        </div>
 
         <div class="bairro-grid-item col-2">
           <div class="bairro-grid-label">Coleta Seletiva</div>
@@ -259,7 +283,7 @@ function renderizarPainelBairro(config) {
           <div class="bairro-grid-value">${ruasDoBairro.length}</div>
         </div>
 
-        <div class="bairro-grid-item col-3">
+        <div class="bairro-grid-item col-6">
           <div class="bairro-grid-label">Extens&atilde;o da rede vi&aacute;ria</div>
           <div class="bairro-grid-value small">${extensaoTotalFormatada} m</div>
         </div>
@@ -289,6 +313,19 @@ function renderizarPainelBairro(config) {
             }).join("")
           : ""
       }
+      
+        ${ crechesDoBairro.length > 0 
+        ? crechesDoBairro.map(function (graphic) {
+          const creche = graphic.attributes;
+        
+          return criarServicoNoBairro(
+            "creche",
+            "",
+            graphic,
+            creche.endereco
+          );
+        }).join("")
+        : "" }
 
       ${
         ubsDoBairro.length > 0
@@ -348,6 +385,17 @@ function renderizarPainelBairro(config) {
               "",
               ubsMaisProxima.graphic,
               ubsMaisProxima.distanciaMetros
+            )
+          : ""
+      }
+      
+            ${
+        crecheMaisProxima
+          ? criarServicoMaisProximo(
+              "creche",
+              "",
+              crecheMaisProxima.graphic,
+              crecheMaisProxima.distanciaMetros
             )
           : ""
       }
