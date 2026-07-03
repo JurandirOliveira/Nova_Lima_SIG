@@ -212,11 +212,10 @@
   font-size: 14px;
 }
 
-.bairro-grid{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:8px;
-    margin:18px 0 22px;
+.bairro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
 .bairro-grid-item{
@@ -236,13 +235,10 @@
     box-sizing:border-box;
 }
 
-.bairro-grid-item.col-3{
-    grid-column:span 3;
-}
-
-.bairro-grid-item.col-2{
-    grid-column:span 2;
-}
+.col-2 {grid-column:  span 1;   /* 25% */}
+.col-4 {grid-column: span 2;   /* 50% */}
+.col-6 {grid-column: span 3;   /* 75% */}
+.col-8 {grid-column: span 4;   /* 100% */}
 
 .bairro-grid-label{
     font-size:11px;
@@ -256,14 +252,13 @@
 .bairro-grid-value{
     font-size:16px;
     font-weight:700;
-    color:#111827;
+    color:#575757;
     line-height:1.15;
     text-align:center;
 }
 
 .bairro-grid-value.small{
     font-size:14px;
-    text-transform:uppercase;
 }
 .painel-section-title {
   display: flex;
@@ -514,10 +509,9 @@ PAINEL V2 - RECURSO SELECIONADO
 }
 
 .resource-box-value {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  color: #111827;
-  text-transform: uppercase;
+  color: #575757;
   line-height: 1.25;
 }
 .resource-main-icon.municipio {
