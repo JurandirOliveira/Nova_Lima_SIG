@@ -5,7 +5,7 @@
       "type": "Feature",
       "properties": {
         "nome": "Escola Municipal Centro",
-        "tipo": "Municipal central",
+        "tipo": "Municipal",
         "bairro": "Centro",
         "endereco": "Rua Principal, 100",
         "diretor":"Maria da Silva",

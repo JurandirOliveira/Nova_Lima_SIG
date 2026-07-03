@@ -19,21 +19,6 @@
     {
       "type": "Feature",
       "properties": {
-        "nome": "Coleta - Jardim Canadá",
-        "tipo": "Coleta seletiva",
-        "bairro": "Jardim Canadá",
-        "endereco": "Avenida Montreal, s/n",
-        "materiais": "Papel, plástico, metal e vidro",
-        "horario": "Segunda a sábado, 08h às 18h"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-43.953, -20.0402]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "nome": "Coleta- Honório Bicalho",
         "tipo": "Coleta seletiva",
         "bairro": "Honório Bicalho",

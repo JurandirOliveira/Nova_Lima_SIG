@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Creche Criança Feliz",
+        "tipo": "Creche",
+        "bairro": "Centro",
+        "endereco": "Rua São João, 85",
+        "municipio": "Nova Lima - MG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8552, -19.9881]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Creche Balão Azul",
+        "tipo": "Creche",
+        "bairro": "Jardim Canadá",
+        "endereco": "Rua dos Pinheiros, 210",
+        "municipio": "Nova Lima - MG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.9482, -20.0472]
+      }
+    }
+  ]
+}
