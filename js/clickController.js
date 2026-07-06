@@ -12,7 +12,6 @@ async function processarClique(event, contexto) {
   const ubsLayer = CAMADAS.ubs.layer;
   const ruasLayer = CAMADAS.ruas.layer;
   const coletaLayer = CAMADAS.coleta.layer;
-  const crechesLayer = CAMADAS.creches.layer;
 
   const response = await view.hitTest(event);
 
@@ -65,21 +64,6 @@ return;
 
     return;
   }
-  
-  const crecheResultado = buscarResultado(crechesLayer);
-if (crecheResultado) {
-  selecionarFeature({
-    graphic: crecheResultado.graphic,
-    selectedSymbol: CAMADAS.creches.selectedSymbol,
-    zoom: 16
-  });
-
-  atualizarPainel(
-    renderizarPainelCreche(crecheResultado.graphic.attributes)
-  );
-
-  return;
-}
 
   const coletaResultado = buscarResultado(coletaLayer);
 
@@ -136,10 +120,6 @@ if (crecheResultado) {
     const coletasDoBairro = coletaLayer.graphics.items.filter(function (graphic) {
       return geometryEngine.contains(bairroGeometry, graphic.geometry);
     });
-    
-    const crechesDoBairro = crechesLayer.graphics.items.filter(function (graphic) {
-      return geometryEngine.contains(bairroGeometry, graphic.geometry);
-    });
 
     const ruasDoBairro = ruasLayer.graphics.items.filter(function (graphic) {
       return geometryEngine.intersects(bairroGeometry, graphic.geometry) ||
@@ -160,7 +140,6 @@ if (crecheResultado) {
     let escolaMaisProxima = null;
     let ubsMaisProxima = null;
     let coletaMaisProxima = null;
-    let crecheMaisProxima = null;
 
     if (escolasDoBairro.length === 0) {
       escolaMaisProxima = encontrarMaisProximo(
@@ -174,14 +153,6 @@ if (crecheResultado) {
       ubsMaisProxima = encontrarMaisProximo(
         bairroGeometry,
         ubsLayer.graphics.items,
-        geometryEngine
-      );
-    }
-    
-    if (crechesDoBairro.length === 0) {
-      crecheMaisProxima = encontrarMaisProximo(
-        bairroGeometry,
-        crechesLayer.graphics.items,
         geometryEngine
       );
     }
@@ -200,12 +171,10 @@ if (crecheResultado) {
         escolasDoBairro,
         ubsDoBairro,
         coletasDoBairro,
-        crechesDoBairro,
         ruasDoBairro,
         extensaoTotalFormatada,
         escolaMaisProxima,
         ubsMaisProxima,
-        crecheMaisProxima,
         coletaMaisProxima
       })
     );
@@ -214,7 +183,6 @@ if (crecheResultado) {
       bairroGeometry,
       escolaMaisProxima,
       ubsMaisProxima,
-      crecheMaisProxima,
       coletaMaisProxima
     );
 
@@ -244,7 +212,6 @@ function registrarEventosPainel(
   bairroGeometry,
   escolaMaisProxima,
   ubsMaisProxima,
-  crecheMaisProxima,
   coletaMaisProxima
 ) {
   document
@@ -269,10 +236,6 @@ function registrarEventosPainel(
           if (tipo === "ubs" && ubsMaisProxima) {
             mostrarConexaoComRecurso(bairroGeometry, ubsMaisProxima.graphic);
           }
-          
-          if (tipo === "creche" && crecheMaisProxima) {
-              mostrarConexaoComRecurso(bairroGeometry, crecheMaisProxima.graphic);
-          }
 
           if (tipo === "coleta" && coletaMaisProxima) {
             mostrarConexaoComRecurso(bairroGeometry, coletaMaisProxima.graphic);
@@ -293,11 +256,6 @@ function registrarEventosPainel(
         if (tipo === "ubs") {
           camada = window.ubsLayer;
           selectedSymbol = window.CAMADAS.ubs.selectedSymbol;
-        }
-        
-        if (tipo === "creche") {
-          camada = window.crechesLayer;
-          selectedSymbol = window.CAMADAS.creches.selectedSymbol;
         }
 
         if (tipo === "coleta") {

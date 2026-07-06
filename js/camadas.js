@@ -54,21 +54,6 @@ const simboloUBSSelecionada = {
   height: "60px",
 };
 
-/* ----------------------------- Creches --------------------------------------- */
-
-const simboloCreche = {
-  type: "picture-marker",
-  url: "img/icons/creche.png",
-  width: "30px",
-  height: "30px"
-};
-
-const simboloCrecheSelecionada = {
-  type: "picture-marker",
-  url: "img/icons/creche.png",
-  width: "60px",
-  height: "60px"
-};
 
 /* ----------------------------- ColetaSeletiva --------------------------------------- */
 
@@ -179,25 +164,6 @@ function criarConfiguracaoCamadas(GraphicsLayer) {
       <p><strong>Endereço:</strong> {endereco}</p>
       <p><strong>Materiais:</strong> {materiais}</p>
       <p><strong>Horário:</strong> {horario}</p>
-    `
-  }
-},
-
-creches: {
-  title: "Creches",
-  layer: new GraphicsLayer({
-    title: "Creches"
-  }),
-  symbol: simboloCreche,
-  selectedSymbol: simboloCrecheSelecionada,
-  geojson: "./data/creches.geojson",
-  popupTemplate: {
-    title: "{nome}",
-    content: `
-      <p><strong>Tipo:</strong> {tipo}</p>
-      <p><strong>Bairro:</strong> {bairro}</p>
-      <p><strong>Endereço:</strong> {endereco}</p>
-      <p><strong>Município:</strong> {municipio}</p>
     `
   }
 },

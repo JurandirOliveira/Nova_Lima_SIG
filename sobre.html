@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Sobre o Projeto | Nova Lima SIG</title>
-
+  <title>Sobre o Projeto | Nova Lima GIS</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/sobre.css">
+<link rel="stylesheet" href="css/sobre.css">
 </head>
 
 <body class="sobre-page">
@@ -14,11 +13,10 @@
   <main class="sobre-container">
 
     <header class="sobre-header">
-      <h1>Nova Lima SIG - V2</h1>
-
+      <h1>Nova Lima GIS — POC v1</h1>
       <p>
-        Aplicação SIG municipal desenvolvida com JavaScript puro,
-        ArcGIS Maps SDK for JavaScript e dados geográficos em GeoJSON.
+        Prova de Conceito de uma aplicação SIG municipal desenvolvida com
+        JavaScript puro e ArcGIS Maps SDK for JavaScript.
       </p>
 
       <a href="index.html" class="btn-voltar">Voltar para o mapa</a>
@@ -26,39 +24,34 @@
 
     <section class="sobre-section">
       <h2>Visão geral</h2>
-
       <p>
-        O Nova Lima SIG é uma aplicação de Sistema de Informação Geográfica
-        voltada à visualização e análise territorial do município de Nova Lima/MG.
+        Esta aplicação representa uma primeira versão funcional de um Sistema de
+        Informação Geográfica voltado ao município de Nova Lima/MG.
       </p>
-
       <p>
-        O projeto começou como uma Prova de Conceito, mas evoluiu para uma base
-        mais estruturada de aplicação SIG, com camadas temáticas, painel lateral
-        customizado, análise espacial por bairro, seleção visual de feições,
-        cálculo de distâncias e identificação de serviços públicos próximos.
+        O objetivo da POC v1 foi conhecer e explorar conceitos fundamentais de SIG (Sistema de Informação Geográfica) construindo uma base simples, organizada e
+        extensível para visualização de dados geográficos.
+        JavaScript do ArcGIS.
       </p>
     </section>
 
     <section class="sobre-section">
-      <h2>Objetivo do projeto</h2>
-
+      <h2>Objetivo da POC</h2>
       <p>
-        O objetivo principal é construir uma aplicação SIG municipal de forma
-        incremental, organizada e didática, explorando conceitos de geoprocessamento,
-        arquitetura de software e boas práticas de JavaScript sem o uso de frameworks.
+        Mais do que criar um mapa interativo, esta versão foi desenvolvida como
+        um exercício de aprendizado progressivo. Cada recurso foi adicionado de
+        forma incremental, sempre buscando compreender o motivo técnico e
+        arquitetural de cada decisão.
       </p>
-
       <p>
-        Mais do que exibir um mapa, a aplicação busca demonstrar como dados
-        espaciais podem apoiar a leitura do território, a análise de cobertura
-        de serviços públicos e a tomada de decisão municipal.
+        A aplicação serve como base para evolução futura em direção a um SIG
+        municipal mais completo, com camadas reais, análises espaciais, filtros,
+        serviços ArcGIS REST e integração com dados públicos.
       </p>
     </section>
 
     <section class="sobre-section">
       <h2>Conceitos de SIG explorados</h2>
-
       <ul>
         <li>Representação vetorial de dados geográficos.</li>
         <li>Geometrias do tipo <strong>Point</strong>, <strong>LineString</strong> e <strong>Polygon</strong>.</li>
@@ -67,26 +60,22 @@
         <li>Uso do formato <strong>GeoJSON</strong>.</li>
         <li>Sistema de referência espacial <strong>WGS84 / WKID 4326</strong>.</li>
         <li>Seleção visual de feições no mapa.</li>
-        <li>Consultas espaciais com <strong>geometryEngine.contains()</strong>.</li>
-        <li>Interseção espacial com <strong>geometryEngine.intersects()</strong>.</li>
-        <li>Cálculo de extensão de ruas com <strong>geometryEngine.geodesicLength()</strong>.</li>
-        <li>Cálculo de recurso mais próximo.</li>
-        <li>Distância geodésica entre bairro e equipamento público.</li>
-        <li>Uso de camadas temporárias para seleção e análise.</li>
+        <li>Consulta espacial com <strong>geometryEngine.contains()</strong>.</li>
+        <li>Relação espacial entre bairros, escolas e UBS.</li>
+        <li>Representação de rede viária com geometrias lineares.</li>
       </ul>
     </section>
 
     <section class="sobre-section">
       <h2>Recursos técnicos utilizados</h2>
-
       <ul>
         <li>HTML5.</li>
         <li>CSS3.</li>
-        <li>JavaScript puro.</li>
+        <li>JavaScript ES6.</li>
         <li>ArcGIS Maps SDK for JavaScript 4.x.</li>
         <li>MapView.</li>
-        <li>GraphicsLayer.</li>
         <li>GeoJSONLayer.</li>
+        <li>GraphicsLayer.</li>
         <li>Graphic.</li>
         <li>geometryEngine.</li>
         <li>LayerList.</li>
@@ -99,7 +88,6 @@
 
     <section class="sobre-section">
       <h2>Arquitetura da aplicação</h2>
-
       <p>
         A aplicação foi organizada com separação clara de responsabilidades,
         evitando concentrar toda a lógica em um único arquivo.
@@ -108,106 +96,89 @@
       <div class="sobre-card">
         <h3>app.js</h3>
         <p>
-          Orquestra a aplicação, inicializa o mapa, cria a view, registra widgets,
-          adiciona camadas e configura os principais eventos.
+          Responsável pela inicialização do mapa, criação da view, widgets,
+          eventos principais e orquestração da aplicação.
         </p>
       </div>
 
       <div class="sobre-card">
         <h3>camadas.js</h3>
         <p>
-          Funciona como catálogo de camadas, concentrando títulos, símbolos,
-          fontes GeoJSON, símbolos de seleção e templates de exibição.
+          Funciona como catálogo de camadas da aplicação, concentrando
+          simbologia, fontes GeoJSON, títulos e templates de exibição.
         </p>
       </div>
 
       <div class="sobre-card">
         <h3>gis.js</h3>
         <p>
-          Contém funções de integração com o ArcGIS, carregamento de GeoJSON,
-          seleção visual, destaque de recursos, limpeza de seleção e desenho
-          de análises temporárias no mapa.
+          Contém funções de integração com o ArcGIS, como carregamento de
+          GeoJSON, criação de Graphics e controle de seleção.
         </p>
       </div>
 
       <div class="sobre-card">
         <h3>clickController.js</h3>
         <p>
-          Centraliza a lógica de clique no mapa, identifica a camada clicada,
-          executa análises espaciais por bairro e aciona os renderizadores do painel.
-        </p>
-      </div>
-
-      <div class="sobre-card">
-        <h3>painelRenderer.js</h3>
-        <p>
-          Responsável pela montagem do HTML do painel lateral, incluindo painéis
-          individuais de recursos, painel de bairro, cards de serviços e seções
-          de serviços próximos.
-        </p>
-      </div>
-
-      <div class="sobre-card">
-        <h3>helpers.js</h3>
-        <p>
-          Reúne funções auxiliares, incluindo cálculo de recurso mais próximo
-          e apoio à formatação de informações.
+          Centraliza a lógica de clique no mapa, identificando a camada
+          selecionada e atualizando o painel lateral.
         </p>
       </div>
 
       <div class="sobre-card">
         <h3>services.js</h3>
         <p>
-          Responsável por integrações externas, como a consulta à API pública do IBGE.
+          Responsável por integrações externas, como a consulta à API pública
+          do IBGE.
+        </p>
+      </div>
+
+      <div class="sobre-card">
+        <h3>helpers.js</h3>
+        <p>
+          Reúne funções auxiliares de interface, como montagem de listas e
+          pequenos componentes HTML.
         </p>
       </div>
     </section>
-
+    
     <section class="sobre-section">
-      <h2>Estrutura do Projeto</h2>
 
-      <p>
+    <h2>Estrutura do Projeto</h2>
+
+    <p>
         A figura abaixo apresenta a organização de pastas da aplicação e a
-        responsabilidade dos principais módulos implementados.
-      </p>
+        responsabilidade de cada módulo implementado na POC v1.
+    </p>
 
-      <div class="estrutura-projeto">
-        <img src="./img/img.png" alt="Estrutura de pastas do projeto Nova Lima SIG">
-      </div>
-    </section>
+    <div class="estrutura-projeto">
+        <img src="./img/img.png" alt="Estrutura de pastas do projeto Nova Lima GIS">
+    </div>
+
+</section>
 
     <section class="sobre-section">
       <h2>Camadas implementadas</h2>
-
       <ul>
         <li><strong>Limite municipal:</strong> carregado a partir da API pública do IBGE.</li>
-        <li><strong>Bairros:</strong> camada local em GeoJSON com geometria Polygon.</li>
-        <li><strong>Ruas:</strong> camada local em GeoJSON com geometria LineString.</li>
-        <li><strong>Escolas:</strong> camada local em GeoJSON com geometria Point.</li>
-        <li><strong>UBS:</strong> camada local em GeoJSON com geometria Point.</li>
-        <li><strong>Coleta seletiva:</strong> camada local em GeoJSON com geometria Point.</li>
-        <li><strong>Creches:</strong> camada local em GeoJSON com geometria Point.</li>
+        <li><strong>Bairros:</strong> camada local mockada com geometria Polygon.</li>
+        <li><strong>Escolas:</strong> camada local mockada com geometria Point.</li>
+        <li><strong>UBS:</strong> camada local mockada com geometria Point.</li>
+        <li><strong>Rede viária:</strong> camada local mockada com geometria LineString.</li>
       </ul>
     </section>
 
     <section class="sobre-section">
-      <h2>Funcionalidades atuais</h2>
-
+      <h2>Funcionalidades da versão 1</h2>
       <ul>
         <li>Visualização do município de Nova Lima/MG.</li>
         <li>Carregamento de camadas locais em GeoJSON.</li>
-        <li>Exibição de bairros, ruas, escolas, UBS, coleta seletiva e creches.</li>
+        <li>Exibição de bairros, escolas, UBS e ruas.</li>
+        <li>Seleção visual de feições.</li>
         <li>Painel lateral customizado para informações.</li>
-        <li>Popup padrão do ArcGIS controlado conforme estado do painel.</li>
-        <li>Seleção visual de feições com camada própria de destaque.</li>
-        <li>Separação entre camada de seleção e camada de análise.</li>
-        <li>Consulta de serviços públicos existentes dentro de cada bairro.</li>
-        <li>Identificação de serviços mais próximos quando o bairro não possui determinado recurso.</li>
-        <li>Desenho de linha tracejada entre bairro e serviço mais próximo.</li>
-        <li>Exibição da distância geodésica entre bairro e recurso.</li>
-        <li>Cálculo da quantidade de ruas por bairro.</li>
-        <li>Cálculo da extensão aproximada da rede viária por bairro.</li>
-        <li>Uso de ícones personalizados por tipo de equipamento público.</li>
+        <li>Desativação do popup padrão do ArcGIS.</li>
+        <li>Consulta de escolas e UBS contidas em cada bairro.</li>
+        <li>Uso de widgets nativos do ArcGIS.</li>
         <li>Controle de camadas com LayerList.</li>
         <li>Legenda automática com Legend.</li>
         <li>Busca geográfica com Search Widget.</li>
@@ -215,88 +186,52 @@
     </section>
 
     <section class="sobre-section">
-      <h2>Camadas temporárias</h2>
-
-      <div class="sobre-card">
-        <h3>highlightLayer</h3>
-        <p>
-          Camada dedicada ao destaque visual da feição selecionada. Ela permite
-          que o recurso ativo apareça acima das demais camadas sem alterar o
-          gráfico original.
-        </p>
-      </div>
-
-      <div class="sobre-card">
-        <h3>analysisLayer</h3>
-        <p>
-          Camada dedicada às análises temporárias, como linhas de conexão,
-          rótulos de distância e futuras representações de buffer, rotas ou
-          áreas de influência.
-        </p>
-      </div>
-    </section>
-
-    <section class="sobre-section">
       <h2>Aprendizados principais</h2>
-
       <ul>
         <li>Como estruturar uma aplicação SIG sem framework.</li>
         <li>Como separar responsabilidades entre arquivos JavaScript.</li>
-        <li>Como representar diferentes tipos de geometria no ArcGIS.</li>
+        <li>Como representar diferentes geometrias no ArcGIS.</li>
         <li>Como transformar GeoJSON em Graphics do ArcGIS.</li>
         <li>Como trabalhar com seleção e destaque de feições.</li>
         <li>Como organizar um catálogo de camadas reutilizável.</li>
-        <li>Como usar consultas espaciais para relacionar bairros e equipamentos públicos.</li>
-        <li>Como calcular distâncias e extensões geodésicas.</li>
-        <li>Como separar camadas permanentes, seleção visual e análises temporárias.</li>
-        <li>Como evoluir uma POC para uma base mais próxima de uma aplicação SIG profissional.</li>
+        <li>Como integrar dados públicos do IBGE.</li>
+        <li>Como pensar a evolução incremental de uma aplicação GIS.</li>
       </ul>
     </section>
 
     <section class="sobre-section">
-      <h2>Limitações atuais</h2>
-
+      <h2>Limitações da versão 1</h2>
       <ul>
         <li>As camadas locais ainda são mockadas.</li>
-        <li>A aplicação ainda não utiliza FeatureServer.</li>
+        <li>A seleção ainda utiliza estado global provisório.</li>
+        <li>As consultas espaciais ainda são simples.</li>
+        <li>A aplicação ainda não usa FeatureServer.</li>
         <li>Não há persistência de dados.</li>
-        <li>Os dados ainda não representam uma base oficial completa do município.</li>
-        <li>As análises espaciais ainda são introdutórias.</li>
-        <li>A inclusão de novas camadas ainda exige alterações manuais em vários arquivos.</li>
+        <li>A rede viária ainda não possui análise espacial avançada.</li>
       </ul>
     </section>
 
     <section class="sobre-section">
-      <h2>Próximos passos</h2>
-
+      <h2>Próximos passos — Versão 2</h2>
       <ul>
-        <li>Explorar buffers e áreas de influência.</li>
-        <li>Criar filtros por camada e por tipo de recurso.</li>
-        <li>Adicionar estatísticas por regional.</li>
+        <li>Calcular extensão da rede viária por bairro.</li>
+        <li>Explorar buffers.</li>
+        <li>Calcular distâncias entre feições.</li>
+        <li>Usar intersects e nearest.</li>
+        <li>Trabalhar com FeatureLayer.</li>
         <li>Consumir serviços ArcGIS REST.</li>
-        <li>Trabalhar com FeatureLayer e FeatureServer.</li>
-        <li>Adicionar dados reais e oficiais ao projeto.</li>
-        <li>Automatizar o processo de inclusão de novas camadas temáticas.</li>
-        <li>Criar análises espaciais mais avançadas.</li>
-        <li>Evoluir a aplicação para uma arquitetura ainda mais modular.</li>
+        <li>Criar filtros com definitionExpression.</li>
+        <li>Adicionar camadas reais ao projeto.</li>
+        <li>Evoluir para análises espaciais mais completas.</li>
       </ul>
     </section>
+    
+     <section class="sobre-section">
 
-    <section class="sobre-section">
-      <h2>Autor</h2>
-
-      <h3>Jurandir Antonio de Oliveira</h3>
-
-      <p>
-        Projeto desenvolvido como estudo prático de SIG, ArcGIS Maps SDK for JavaScript,
-        arquitetura de software e aplicações geográficas municipais.
-      </p>
-
-      <p>
-        Data: Julho de 2026
-      </p>
-    </section>
-
+         <h2>Autor.js</h2>
+        <h3>Jurandir Antonio de Oliveira</h3>
+        <p>Data: Junho de 2026</p>
+    </section>   
   </main>
 
 </body>
